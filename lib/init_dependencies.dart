@@ -1,0 +1,24 @@
+import 'package:blogger/core/common/cubits/app_user/app_user_cubit.dart';
+import 'package:blogger/core/network/connection_checker.dart';
+import 'package:blogger/core/secrets/supabase_secrets.dart';
+import 'package:blogger/features/auth/data/repositories/auth_repo_impl.dart';
+import 'package:blogger/features/auth/data/sources/auth_remote_datasource.dart';
+import 'package:blogger/features/auth/data/sources/blog_local_datasource.dart';
+import 'package:blogger/features/auth/domain/repository/auth_repository.dart';
+import 'package:blogger/features/auth/domain/usecase/current_user.dart';
+import 'package:blogger/features/auth/domain/usecase/user_login.dart';
+import 'package:blogger/features/auth/domain/usecase/user_signup.dart';
+import 'package:blogger/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:blogger/features/blog/data/repositories/blog_repo_impl.dart';
+import 'package:blogger/features/blog/data/sources/blog_remote_datasource.dart';
+import 'package:blogger/features/blog/domain/repository/blog_repository.dart';
+import 'package:blogger/features/blog/domain/usecase/get_all_blogs.dart';
+import 'package:blogger/features/blog/domain/usecase/upload_blog.dart';
+import 'package:blogger/features/blog/presentation/bloc/blog_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+part 'init_dependencies.main.dart';
